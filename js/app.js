@@ -14,26 +14,26 @@ function init() {
 
 // create a renderer and add it to the DOM.
 	renderer = new THREE.WebGLRenderer({antialias:true});
-	renderer.setsize(WIDTH, HEIGHT);
+	renderer.setSize(WIDTH, HEIGHT);
 	document.body.appendChild(renderer.domElement);
 
 //Create a camera, zoom ito out form the model a bit and add it to the scene.
-	camera = new THREE.PersepctiveCamera(45, WIDTH / HEIGHT, 0.1, 20000);
+	camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 0.1, 20000);
 	camera.position.set(0,6,0);
-	secne.add(camera);
+	scene.add(camera);
 
 //set the background color of the scene.
-	renderer.setClearColorHex(0x333f47, 1);
+	renderer.setClearColor(0x333f47, 1);
 
 //creat a light, set its postion, and add it to the scene.
-	var light = new THREE.PointLgiht(0xffffff);
-	light.postion.set(-100,200,100);
-	secene.add(light);
+	var light = new THREE.PointLight(0xffffff);
+	light.position.set(-100,200,100);
+	scene.add(light);
 
 //load in the mesh and add it to the scene.
 	var loader = new THREE.JSONLoader();
-	loader.load("../resources/twitterLogo.json", function(geometry) {
-		var material = new THREE.MeshLamberMaterial({color: 0x55b663});
+	loader.load("resources/twitterLogo.json", function(geometry) {
+		var material = new THREE.MeshBasicMaterial({color: 0x55b663});
 		mesh = new THREE.Mesh(geometry, material);
 		scene.add(mesh);
 	});
@@ -42,13 +42,15 @@ function init() {
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 //Renders the sence and updates the render as needed.
-	function animate(){
+	
+}
+
+function animate(){
 
 	requestAnimationFrame(animate);
 
 	//Render the scene.
 	renderer.render(scene, camera);
 	controls.update();
-	
+
 	}
-}
