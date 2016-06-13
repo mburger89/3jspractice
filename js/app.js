@@ -27,7 +27,7 @@ function init() {
 
 //creat a light, set its postion, and add it to the scene.
 	var light = new THREE.PointLight(0xffffff);
-	light.position.set(-100,200,100);
+	light.position.set(100,200,100);
 	scene.add(light);
 	var light = new THREE.AmbientLight(0xffffff);
 	scene.add(light);
