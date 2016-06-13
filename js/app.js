@@ -23,7 +23,7 @@ function init() {
 	scene.add(camera);
 
 //set the background color of the scene.
-	renderer.setClearColor(0x333f47, 1);
+	renderer.setClearColor(0xF3F6F9, 1);
 
 //creat a light, set its postion, and add it to the scene.
 	var light = new THREE.PointLight(0xffffff);
@@ -33,7 +33,7 @@ function init() {
 //load in the mesh and add it to the scene.
 	var loader = new THREE.JSONLoader();
 	loader.load("resources/twitterLogo.json", function(geometry) {
-		var material = new THREE.MeshBasicMaterial({color: 0x55b663});
+		var material = new THREE.MeshBasicMaterial({color: 0x1DA1F2});
 		mesh = new THREE.Mesh(geometry, material);
 		scene.add(mesh);
 	});
