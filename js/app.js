@@ -29,11 +29,13 @@ function init() {
 	var light = new THREE.PointLight(0xffffff);
 	light.position.set(-100,200,100);
 	scene.add(light);
+	var light = new THREE.AmbientLight(0xffffff);
+	scene.add(light);
 
 //load in the mesh and add it to the scene.
 	var loader = new THREE.JSONLoader();
 	loader.load("resources/twitterLogo.json", function(geometry) {
-		var material = new THREE.MeshBasicMaterial({color: 0x1DA1F2});
+		var material = new THREE.MeshLambertMaterial({color: 0x1DA1F2});
 		mesh = new THREE.Mesh(geometry, material);
 		scene.add(mesh);
 	});
