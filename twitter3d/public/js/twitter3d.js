@@ -34,7 +34,7 @@ function init() {
 
 //load in the mesh and add it to the scene.
 	var loader = new THREE.JSONLoader();
-	loader.load("resources/twitterLogo.json", function(geometry) {
+	loader.load("models/twitterLogo.json", function(geometry) {
 		var material = new THREE.MeshLambertMaterial({color: 0x1DA1F2});
 		mesh = new THREE.Mesh(geometry, material);
 		scene.add(mesh);

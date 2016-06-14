@@ -1,8 +1,12 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    
-  body
-    block content
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/reset.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src='/js/three.min.js')
+				
+body
+	script(src='/js/OrbitControls.js')
+	script(src='/js/twitter3d.js')
+	block content
